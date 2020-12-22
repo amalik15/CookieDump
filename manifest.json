@@ -1,0 +1,31 @@
+{
+
+    "manifest_version": 2,
+    "name": "CookieDump",
+    "version": "1.0",
+  
+    "description": "This will export cookies on the current open tab.",
+  
+    "icons": {
+      "48": "icons/cookie.svg",
+      "96": "icons/cookie.svg"
+    },
+
+    "permissions": [
+      "activeTab"
+    ],
+
+    "browser_action": {
+      "default_icon": "icons/cookie.svg",
+      "default_title": "CookieDump",
+      "default_popup": "popup/cookie_dump.html"
+    },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.mozilla.org/*"],
+        "js": ["borderify.js"]
+      }
+    ]
+  
+  }
